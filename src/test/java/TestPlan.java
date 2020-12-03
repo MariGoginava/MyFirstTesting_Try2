@@ -19,12 +19,14 @@ public class TestPlan {
     @Test(testName = "Submit a WebForms")
     public static void submitForm(){
         driver.get(Utils.BASE_URL);
+
         WebForms w = new WebForms(driver, null, null, null);
         w.pressForgotPasswordButton();
         w.enterEmail();
         w.pressRetrievePasswordButton();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         w.verifyAlertSuccess();
 
     }
